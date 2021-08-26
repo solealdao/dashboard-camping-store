@@ -6805,7 +6805,7 @@ button.bg-light:hover {
 }
 
 .bg-dark {
-  background-color: #5a5c69 !important
+  background-color: #2B3A67 !important
 }
 
 a.bg-dark:focus,
@@ -10786,8 +10786,8 @@ a:focus {
 }
 
 .bg-gradient-secondary {
-  background-color: #858796;
-  background-image: linear-gradient(180deg, #858796 10%, #60616f 100%);
+  background-color: #FF3E41;
+  background-image: linear-gradient(180deg, #FF3E41 10%, #FF3E41 100%);
   background-size: cover
 }
 

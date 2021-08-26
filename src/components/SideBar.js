@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../assets/images/logo512.png';
+import image from '../assets/images/logo-desktop.png';
 import MainWrapper from './MainWrapper';
 import CategoriesInDb from './CategoriesInDb';
 import LastProductInDb from './LastProductInDb';
