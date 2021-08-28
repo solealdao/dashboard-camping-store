@@ -6,7 +6,7 @@ import Box from './Box';
 /* <!-- Products in DB --> */
 
 let productsInDB = {
-    title: 'Products in Data Base',
+    title: 'Total Productos',
     color: 'primary', 
     cuantity: 21,
     icon: 'fa-clipboard-list'
@@ -15,7 +15,7 @@ let productsInDB = {
 /* <!-- Total categories --> */
 
 let categoriesQuantity = {
-    title:' Total awards', 
+    title:' Total Categorías', 
     color:'success', 
     cuantity: '79',
     icon:'fa-award'
@@ -24,7 +24,7 @@ let categoriesQuantity = {
 /* <!-- Users quantity --> */
 
 let usersQuantity = {
-    title:'Users quantity' ,
+    title:'Total Usuarios' ,
     color:'warning',
     cuantity:'49',
     icon:'fa-user-check'
