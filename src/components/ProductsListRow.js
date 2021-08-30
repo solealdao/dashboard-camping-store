@@ -14,7 +14,6 @@ function ProductsListRow(props){
                             )}
                         </ul>
                     </td>
-                    <td>{props.Awards}</td>
                 </tr>
             )
     }

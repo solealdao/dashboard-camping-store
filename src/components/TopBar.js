@@ -15,30 +15,30 @@ function TopBar(){
 					{/*<!-- Topbar Navbar -->*/}
 					<ul className="navbar-nav ml-auto">
 
-						{/*<!-- Nav Item - Alerts -->*/}
+						{/* <!-- Nav Item - Alerts -->
 						<li className="nav-item dropdown no-arrow mx-1">
 							<a className="nav-link dropdown-toggle" href="/" id="alertsDropdown">
 								<i className="fas fa-bell fa-fw"></i>
-								{/*<!-- Counter - Alerts -->*/}
+								<!-- Counter - Alerts -->
 								<span className="badge badge-danger badge-counter">3+</span>
 							</a>
-						</li>
+						</li> */}
 
-						{/*<!-- Nav Item - Messages -->*/}
+						{/* <!-- Nav Item - Messages -->
 						<li className="nav-item dropdown no-arrow mx-1">
 							<a className="nav-link dropdown-toggle" href="/" id="messagesDropdown">
 								<i className="fas fa-envelope fa-fw"></i>
-								{/*<!-- Counter - Messages -->*/}
+								<!-- Counter - Messages -->
 								<span className="badge badge-danger badge-counter">7</span>
 							</a>
-						</li>
+						</li> */}
 
 						<div className="topbar-divider d-none d-sm-block"></div>
 
 						{/*<!-- Nav Item - User Information -->*/}
 						<li className="nav-item dropdown no-arrow">
 							<a className="nav-link dropdown-toggle" href="/" id="userDropdown">
-								<span className="mr-2 d-none d-lg-inline text-gray-600 small">Axi y Sole- React Developers </span>
+								<span className="mr-2 d-none d-lg-inline text-gray-600 small">Admin name </span>
 								<img className="img-profile rounded-circle" src={foto} alt="Axi y Sole - React Developers " width="60"/>
 							</a>
 						</li>
