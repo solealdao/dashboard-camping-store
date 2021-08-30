@@ -16,7 +16,7 @@ function SideBar(){
                 {/*<!-- Sidebar - Brand -->*/}
                 <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                     <div className="sidebar-brand-icon">
-                        <img className="w-100" src={image} alt="Digital House"/>
+                        <img className="w-100" src={image} alt="Camping Store"/>
                     </div>
                 </a>
 
@@ -27,20 +27,20 @@ function SideBar(){
                 <li className="nav-item active">
                     <Link className="nav-link" to="/">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard - Camping Store Products</span></Link>
+                        <span>Dashboard - Camping Store</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider"/>
 
                 {/*<!-- Heading -->*/}
-                <div className="sidebar-heading">Actions</div>
+                <div className="sidebar-heading">Opciones</div>
 
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
                 <Link className="nav-link" to="/CategoriesInDb">
                         <i className="fas fa-fw fa-folder"></i>
-                        <span>Pages</span>
+                        <span>Categorías</span>
                     </Link>
                 </li>
 
@@ -55,31 +55,19 @@ function SideBar(){
                 <li className="nav-item nav-link">
                 <Link className="nav-link" to="/ContentRowProducts">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></Link>
+                        <span>Resumen Camping Store</span></Link>
                 </li>
                 
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>
+                
+                <div className= "div-button"><button className= "sidebar-button">Ir a Camping Store</button></div>
+            
             </ul>
             {/*<!-- End of Sidebar -->*/}
 
-            {/*<!-- Microdesafio 1 -->*/}
-            {/*<!--<Route exact path="/">
-                <MainWrapper />
-            </Route>
-            <Route path="/CategoriesInDb">
-                <CategoriesInDb />
-            </Route>
-            <Route path="/LastProductInDb">
-                <LastProductInDb />
-            </Route>
-            <Route path="/ContentRowProducts">
-                <ContentRowProducts />
-            </Route>*/}
-            {/*<!-- End Microdesafio 1 -->*/}
-
-            {/*<!-- End Microdesafio 2 -->*/}
+            
             <Switch>
                 <Route exact path="/">
                     <MainWrapper />
@@ -94,8 +82,7 @@ function SideBar(){
                     <ContentRowProducts />
                 </Route>
                 {/* <Route component={NotFound} /> */}
-            </Switch>
-            {/*<!-- End Microdesafio 2 -->*/}
+            </Switch>            
         </React.Fragment>
     )
 }

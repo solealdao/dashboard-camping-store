@@ -87,6 +87,18 @@ hr {
   overflow: visible
 }
 
+.div-button{
+  margin:10px auto
+}
+
+.sidebar-button{
+  background-color: #202030;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px
+}
+
 h1,
 h2,
 h3,
@@ -10442,7 +10454,7 @@ button.bg-dark:hover {
 }
 
 .text-primary {
-  color: #4e73df !important
+  color: #2b3a67 !important
 }
 
 a.text-primary:focus,
@@ -10460,7 +10472,7 @@ a.text-secondary:hover {
 }
 
 .text-success {
-  color: #1cc88a !important
+  color: #ff3e41 !important
 }
 
 a.text-success:focus,
@@ -10478,7 +10490,7 @@ a.text-info:hover {
 }
 
 .text-warning {
-  color: #f6c23e !important
+  color: #717171 !important
 }
 
 a.text-warning:focus,
@@ -10921,11 +10933,11 @@ a:focus {
 }
 
 .border-left-primary {
-  border-left: .25rem solid red !important
+  border-left: .25rem solid #2b3a67 !important
 }
 
 .border-bottom-primary {
-  border-bottom: .25rem solid #4e73df !important
+  border-bottom: .25rem solid #2b3a67 !important
 }
 
 .border-left-secondary {
@@ -10937,11 +10949,11 @@ a:focus {
 }
 
 .border-left-success {
-  border-left: .25rem solid #1cc88a !important
+  border-left: .25rem solid #ff3e41 !important
 }
 
 .border-bottom-success {
-  border-bottom: .25rem solid #1cc88a !important
+  border-bottom: .25rem solid #ff3e41 !important
 }
 
 .border-left-info {
@@ -10953,11 +10965,11 @@ a:focus {
 }
 
 .border-left-warning {
-  border-left: .25rem solid #f6c23e !important
+  border-left: .25rem solid #717171 !important
 }
 
 .border-bottom-warning {
-  border-bottom: .25rem solid #f6c23e !important
+  border-bottom: .25rem solid #717171 !important
 }
 
 .border-left-danger {
@@ -11546,7 +11558,8 @@ a:focus {
 }
 
 .sidebar-dark .sidebar-brand {
-  color: #fff
+  color: #fff;
+  margin-top: 10px
 }
 
 .sidebar-dark hr.sidebar-divider {
