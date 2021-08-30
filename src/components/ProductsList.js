@@ -32,15 +32,7 @@ function ProductsList (){
                                 <th>Precio</th>
                                 <th>Categoría</th>
                             </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <th>Título</th>
-                                <th>Duración</th>
-                                <th>Rating</th>
-                                <th>Género</th>
-                            </tr>
-                        </tfoot>
+                        </thead>                        
                         <tbody>
                             {
                             tableRowsData.map( ( row , i) => {
