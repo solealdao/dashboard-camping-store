@@ -7,10 +7,19 @@ function ProductsList (){
         fetch('http://localhost:3001/api/products')
             .then ( res => res.json())
             .then ( data => {
-                SetProductsList(data.data)
+                SetProductsList(data.products)
             })
             .catch (err => console.log(err));
-    }, []);
+    }, [productsList]);
+
+    let list = {
+        name:productsList.name,
+        description: productsList.description,
+        categorias: productsList.categorias
+    }
+
+    let boxList = [list];
+    
 
     return (
         /* <!-- DataTales Example --> */
@@ -27,8 +36,8 @@ function ProductsList (){
                         </thead>                        
                         <tbody>
                             {
-                                productsList &&
-                            productsList.map((product, i) => {
+                            boxList &&
+                            boxList.map((product, i) => {
                                 return <ProductsListRow 
                                 name= {product.name}
                                 description= {product.description}

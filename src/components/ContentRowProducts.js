@@ -18,6 +18,22 @@ function ContentRowProducts(){
 
     }, [products]);
 
+    const [categories, setCategories] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:3001/api/products')
+            .then ( res => res.json())
+            .then ( categories => {
+                setCategories(categories)
+                
+            })
+            .catch (e => console.log(e));
+    }, []);
+    useEffect(() => {
+
+    }, [categories]);
+
+
+
     const [users, setUsers] = useState([]);
     useEffect(() => {
         fetch('http://localhost:3001/api/users')
@@ -46,7 +62,7 @@ function ContentRowProducts(){
     let categoriesQuantity = {
         title:' Total Categorías', 
         color:'success', 
-        quantity: products.count,
+        quantity: categories.count,
     }
     
     /* <!-- Users quantity --> */
