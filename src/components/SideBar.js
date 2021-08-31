@@ -62,7 +62,7 @@ function SideBar(){
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>
                 
-                <div className= "div-button"><button className= "sidebar-button">Ir a Camping Store</button></div>
+                <div className= "div-button"><a href= "http://localhost:3001/" className= "sidebar-button">Ir a Camping Store</a></div>
             
             </ul>
             {/*<!-- End of Sidebar -->*/}

@@ -1,38 +1,64 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Box from './Box';
 
-/*  Cada set de datos es un objeto literal */
-
-/* <!-- Products in DB --> */
-
-let productsInDB = {
-    title: 'Total Productos',
-    color: 'primary', 
-    cuantity: 21,
-    icon: 'fa-clipboard-list'
-}
-
-/* <!-- Total categories --> */
-
-let categoriesQuantity = {
-    title:' Total Categorías', 
-    color:'success', 
-    cuantity: '79',
-    icon:'fa-award'
-}
-
-/* <!-- Users quantity --> */
-
-let usersQuantity = {
-    title:'Total Usuarios' ,
-    color:'warning',
-    cuantity:'49',
-    icon:'fa-user-check'
-}
-
-let boxProps = [productsInDB, categoriesQuantity, usersQuantity];
 
 function ContentRowProducts(){
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:3001/api/products')
+            .then ( response => response.json())
+            .then ( data => {
+                setProducts(data)
+            })
+            .catch (e => console.log(e));
+    }, []);
+
+    useEffect(() => {
+
+    }, [products]);
+
+    const [users, setUsers] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:3001/api/users')
+            .then ( res => res.json())
+            .then ( users => {
+                setUsers(users)
+                
+            })
+            .catch (e => console.log(e));
+    }, []);
+    useEffect(() => {
+
+    }, [users]);
+
+
+    useEffect(()=> console.log('Componente desmontado'),[]);
+
+    let productsInDB = {
+        title: 'Total Productos',
+        color: 'primary', 
+        quantity: products.count,
+    }
+    
+    /* <!-- Total categories --> */
+    
+    let categoriesQuantity = {
+        title:' Total Categorías', 
+        color:'success', 
+        quantity: products.count,
+    }
+    
+    /* <!-- Users quantity --> */
+    
+    let usersQuantity = {
+        title:'Total Usuarios' ,
+        color:'warning',
+        quantity: users.count,
+    }
+
+    let boxProps = [productsInDB, categoriesQuantity, usersQuantity];
+
     return (
     
         <div className="row">
@@ -46,5 +72,7 @@ function ContentRowProducts(){
         </div>
     )
 }
+/* <!-- Products in DB --> */
+
 
 export default ContentRowProducts;

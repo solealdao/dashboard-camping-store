@@ -4,12 +4,11 @@ import React from 'react';
 function ProductsListRow(props){
     return (
                 <tr>
-                    <td>{props.Title}</td>
-                    <td>{props.Length}</td>
-                    <td>{props.Rating}</td>
+                    <td>{props.name}</td>
+                    <td>{props.description}</td>
                     <td>
                         <ul>
-                            {props.Categories.map( (category,i) => 
+                            {props.categorias.map( (category,i) => 
                                 <li key={`category ${i}`}>{category}</li>
                             )}
                         </ul>

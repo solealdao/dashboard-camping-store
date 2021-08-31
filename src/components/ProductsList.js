@@ -1,24 +1,17 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import ProductsListRow from './ProductsListRow';
 
-let tableRowsData = [
-    {
-        Title: 'Billy Elliot ',
-        Length: '123',
-        Rating: '5',
-        Categories: ['Drama','Comedia']
-    },
-    {
-        Title: 'Alicia en el país de las maravillas',
-        Length: '142',
-        Rating: '4.8',
-        Categories: ['Drama','Acción','Comedia']
-    },
-    
-]
-
-
 function ProductsList (){
+    let [productsList, SetProductsList] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:3001/api/products')
+            .then ( res => res.json())
+            .then ( data => {
+                SetProductsList(data.data)
+            })
+            .catch (err => console.log(err));
+    }, []);
+
     return (
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
@@ -29,14 +22,19 @@ function ProductsList (){
                             <tr>
                                 <th>Nombre del Producto</th>
                                 <th>Descripción</th>
-                                <th>Precio</th>
                                 <th>Categoría</th>
                             </tr>
                         </thead>                        
                         <tbody>
                             {
-                            tableRowsData.map( ( row , i) => {
-                                return <ProductsListRow { ...row} key={i}/>
+                                productsList &&
+                            productsList.map((product, i) => {
+                                return <ProductsListRow 
+                                name= {product.name}
+                                description= {product.description}
+                                categorias= {product.categorias}
+                                
+                                key={i}/>
                             })
                             }
 
