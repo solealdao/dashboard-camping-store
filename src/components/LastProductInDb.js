@@ -8,7 +8,16 @@ function LastProductInDb(){
         fetch('http://localhost:3001/api/products')
             .then( res => res.json())
             .then ( data => {
-                setProduct(data);
+                
+                let lastProduct= data.products[data.products.length-1][0]
+                fetch('http://localhost:3001/api/products/'+data.products[data.products.length-1][0].id)
+                    .then( res => res.json())
+                    .then ( detailData => {
+                        
+                        lastProduct.image= detailData.URL_Image
+                        setProduct(lastProduct);
+                    })
+                    .catch(err => console.log(err))
             })
             .catch( err => console.log(err));
         }, []);
@@ -16,14 +25,19 @@ function LastProductInDb(){
     
     
     useEffect(() => {}, [product]);
-
-    let productLast = {
+    console.log(product)
+    
+    if (product.image !== undefined) {
+        let imgName = product.image.split('/')
+        product.image = imgName[imgName.length-1]
+    }
+    let ultProd = {
         name:product.name,
         description:product.description,
         image: product.image,
+        detail: product.detail,
     }
-
-    let ultProd = [productLast];
+console.log(ultProd)
 
 
     return(
@@ -34,11 +48,11 @@ function LastProductInDb(){
                 </div>
                 <div className="card-body">
                     <div className="text-center">
-                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={`http://localhost:3001/api/products/${ultProd.image} `} alt=" Último producto "/>                        
+                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={'http://localhost:3001/img/products/'+ultProd.image} alt=" Último producto "/>                        
                     </div>
                     <h2> {ultProd.name}</h2>
                     <p>{ultProd.description}</p>
-                    <a className="btn btn-danger" target="_blank" rel="noreferrer" href='{ultProd.detail}'>Ver detalle del producto</a>
+                    <a className="btn btn-danger" target="_blank" rel="noreferrer" href={ultProd.detail}>Ver detalle del producto</a>
                 </div>
             </div>
         </div>

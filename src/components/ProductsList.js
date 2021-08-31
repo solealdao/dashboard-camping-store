@@ -7,53 +7,63 @@ function ProductsList (){
         fetch('http://localhost:3001/api/products')
             .then ( res => res.json())
             .then ( data => {
-                SetProductsList(data.products)
+                let parsedData= data.products;
+                for (let i=0; i<parsedData.length; i++) {
+                    let product= parsedData[i][0];
+                    let categorias= ''
+                    for (let j=0; j<product.categorias.length; j++) {
+                        categorias += product.categorias[j].name
+                        
+                        if (j < product.categorias.length-1) {
+                            categorias += ', '
+                        }
+                    }
+                    product.categorias=categorias;
+                    parsedData[i][0]= product
+                    
+                }
+                SetProductsList(parsedData)
             })
             .catch (err => console.log(err));
-    }, [productsList]);
+        }, []);
 
-    let list = {
-        name:productsList.name,
-        description: productsList.description,
-        categorias: productsList.categorias
-    }
+        useEffect(() => {
+        }, [productsList]);
 
-    let boxList = [list];
+        return (
+            /* <!-- DataTales Example --> */
+            <div className="card shadow mb-4">
+                <div className="card-body">
+                    <div className="table-responsive">
+                        <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Nombre del Producto</th>
+                                    <th>Descripción</th>
+                                    <th>Categoría</th>
+                                </tr>
+                            </thead>                        
+                            <tbody>
+                                {
+                                productsList && 
+                                productsList.map((product, i) => {
+                                    return <ProductsListRow 
+                                    name= {product[0].name}
+                                    description= {product[0].description}
+                                    categorias= {product[0].categorias}
+                                    
+                                    key={i}/>
+                                })
+                                }
     
-
-    return (
-        /* <!-- DataTales Example --> */
-        <div className="card shadow mb-4">
-            <div className="card-body">
-                <div className="table-responsive">
-                    <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
-                        <thead>
-                            <tr>
-                                <th>Nombre del Producto</th>
-                                <th>Descripción</th>
-                                <th>Categoría</th>
-                            </tr>
-                        </thead>                        
-                        <tbody>
-                            {
-                            boxList &&
-                            boxList.map((product, i) => {
-                                return <ProductsListRow 
-                                name= {product.name}
-                                description= {product.description}
-                                categorias= {product.categorias}
-                                
-                                key={i}/>
-                            })
-                            }
-
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
+    
+        )
+    }
 
-    )
-}
 
 export default ProductsList;

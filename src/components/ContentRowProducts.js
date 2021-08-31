@@ -64,7 +64,6 @@ function ContentRowProducts(){
         color:'success', 
         quantity: categories.length,
     }
-    console.log (categories.countByCategory)
     
     /* <!-- Users quantity --> */
     
