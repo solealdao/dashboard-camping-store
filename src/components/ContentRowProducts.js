@@ -20,10 +20,10 @@ function ContentRowProducts(){
 
     const [categories, setCategories] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:3001/api/products')
+        fetch('http://localhost:3001/api/products/categories')
             .then ( res => res.json())
             .then ( categories => {
-                setCategories(categories)
+                setCategories(categories.countByCategory)
                 
             })
             .catch (e => console.log(e));
@@ -62,8 +62,9 @@ function ContentRowProducts(){
     let categoriesQuantity = {
         title:' Total Categorías', 
         color:'success', 
-        quantity: categories.count,
+        quantity: categories.length,
     }
+    console.log (categories.countByCategory)
     
     /* <!-- Users quantity --> */
     
